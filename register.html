@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>ثبت‌نام دوره - هانورا اکسیم</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Lalezar&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <section class="register">
+    <h2>فرم ثبت‌نام دوره</h2>
+    <form action="https://formspree.io/f/mvgqovkg" method="POST">
+      <input type="text" name="name" placeholder="نام و نام خانوادگی" required />
+      <input type="tel" name="phone" placeholder="شماره تماس" required />
+      <input type="email" name="email" placeholder="ایمیل" required />
+      <select name="course" id="course-select" required>
+        <option value="">انتخاب دوره</option>
+        <option value="کارگاه واردات و ثبت سفارش">کارگاه واردات و ثبت سفارش</option>
+        <option value="دوره تخصصی تجار و تولیدکنندگان">دوره تخصصی تجار و تولیدکنندگان</option>
+        <option value="دوره جامع سامانه انبارها و لجستیک داخلی">دوره جامع سامانه انبارها و لجستیک داخلی</option>
+      </select>
+      <button type="submit">ثبت‌نام</button>
+    </form>
+    <p class="alt-contact">
+      در صورت نیاز می‌توانید با شماره <strong>09991787704</strong> تماس بگیرید.
+    </p>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const course = params.get('course');
+    if(course) {
+      document.getElementById('course-select').value = course;
+    }
+  </script>
+
+</body>
+</html>
